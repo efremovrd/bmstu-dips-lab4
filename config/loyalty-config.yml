@@ -1,0 +1,12 @@
+server:
+  AppVersion: 1.0.0
+  Port: :8050
+  ReadTimeout: 10
+  WriteTimeout: 10
+
+postgres:
+  PostgresqlHost: postgres
+  PostgresqlPort: 5432
+  PostgresqlUser: program
+  PostgresqlPassword: test
+  PostgresqlDbname: loyalties
