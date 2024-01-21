@@ -1,0 +1,31 @@
+# Default values for my-app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+services:
+  loyalty:
+    name: loyalty
+    container: docker.io/efremovrd/bmstu-dips-lab4-loyalty-service
+    replicaCount: 1
+    port: 8050
+    publishUrl: /loyalty-service-direct/
+  payment:
+    name: payment
+    container: docker.io/efremovrd/bmstu-dips-lab4-payment-service
+    replicaCount: 1
+    port: 8060
+    publishUrl: /payment-service-direct/
+  reservation:
+    name: reservation
+    container: docker.io/efremovrd/bmstu-dips-lab4-reservation-service
+    replicaCount: 1
+    port: 8070
+    publishUrl: /reservation-service-direct/
+  gateway:
+    name: gateway
+    container: docker.io/efremovrd/bmstu-dips-lab4-gateway-service
+    replicaCount: 1
+    port: 8080
+    publishUrl: /

@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: controller
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          {{- range  $key, $val := .Values.services}}
+          {{- if (hasKey $val "publishUrl") }}
+          - path: {{ (printf "%s(.*)" $val.publishUrl) | quote}}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $.Release.Name }}-{{$val.name}}-srv
+                port:
+                  number: 80
+          {{- end}}
+          {{- end }}
+          

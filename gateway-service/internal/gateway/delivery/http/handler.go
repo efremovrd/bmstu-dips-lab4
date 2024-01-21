@@ -15,9 +15,9 @@ import (
 )
 
 const (
-	loylatyService     string = "http://loyalty-service:8050"
-	paymentService     string = "http://payment-service:8060"
-	reservationService string = "http://reservation-service:8070"
+	loylatyService     string = "http://my-app-loyalty-srv:8050"
+	paymentService     string = "http://my-app-payment-srv:8060"
+	reservationService string = "http://my-app-reservation-srv:8070"
 )
 
 type LoyaltyResponse struct {

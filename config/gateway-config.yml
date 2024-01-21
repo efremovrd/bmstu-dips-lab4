@@ -5,7 +5,7 @@ server:
   WriteTimeout: 10
 
 postgres:
-  PostgresqlHost: postgres
+  PostgresqlHost: db-service
   PostgresqlPort: 5432
   PostgresqlUser: program
   PostgresqlPassword: test
